@@ -139,9 +139,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
     .service('computeCarouselSlideStyle', ["DeviceCapabilities", function(DeviceCapabilities) {
         // compute transition transform properties for a given slide and global offset
         return function(slideIndex, offset, transitionType) {
-            var style = {
-                    display: 'inline-block'
-                },
+            var style = {},
                 opacity,
                 absoluteLeft = (slideIndex * 100) + offset,
                 slideTransformValue = DeviceCapabilities.has3d ? 'translate3d(' + absoluteLeft + '%, 0, 0)' : 'translate3d(' + absoluteLeft + '%, 0)',
